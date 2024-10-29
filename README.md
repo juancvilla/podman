@@ -13,6 +13,8 @@ Create image gallery pod: (from: [https://projectworlds.in](https://projectworld
 
 ```podman pod create --name image-gallery -p 8080:8080```
 
+Bajar el programa php (from: [https://projectworlds.in/wp-content/uploads/2019/06/image-gallery.zip](https://projectworlds.in/wp-content/uploads/2019/06/image-gallery.zip))
+
 Crear un contenedor para indicar donde se ubicaran las fuentes de php:
 
 ```podman run -d --read-only --restart unless-stopped --pod image-gallery -v /home/juancvilla/projects/lamp1/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name mydevcontainer php-56-rhel7:1.0```

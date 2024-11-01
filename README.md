@@ -45,19 +45,24 @@ Si no esta corriendo ejecutar:
 
 Para crear la base de datos y sus tablas por primera vez:
 
+```podman exec -i myd  bash -c 'mysql -u admin -padmin project' < project.sql```
+
+Probar que los datos se genraron:
+
 ```podman exec -it myd bash```
 
 Conectarse a la base de datos con clave: admin
 
 ```$ mysql -h 127.0.0.1 -u admin -p```
 
-otra
+Cambiar a la base de datos project:
 
 ```$ use database project;```
 
-Ejecutar todas las acciones que se encuentran en archivo project.sql
+Ver las tablas:
 
-head  pr
+```$ show tables;```
+
 
 
 

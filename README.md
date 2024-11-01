@@ -9,7 +9,7 @@ Listar las imagenes:
 
 ```podman image list```
 
-Create image gallery pod: (from: [https://projectworlds.in](https://projectworlds.in/free-projects/php-projects/simple-image-gallery-in-php-with-source-code/))
+Create image gallery pod: (from: [https://projectworlds.in](https://projectworlds.in/free-projects/php-projects/simple-image-gallery-in-php-with-source-code))
 
 ```podman pod create --name image-gallery -p 8080:8080```
 

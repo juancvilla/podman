@@ -9,19 +9,19 @@ Listar las imagenes:
 
 ```podman image list```
 
-Create image gallery pod: (from: [https://projectworlds.in](https://projectworlds.in/free-projects/php-projects/simple-image-gallery-in-php-with-source-code/))
+Create online examination system pod: (from: https://projectworlds.in/free-projects/php-projects/online-examination/)
 
-```podman pod create --name image-gallery -p 8080:8080```
+```podman pod create --name oes -p 8080:8080```
 
-Bajar el programa php (from: [https://projectworlds.in/wp-content/uploads/2019/06/image-gallery.zip](https://projectworlds.in/wp-content/uploads/2019/06/image-gallery.zip))
+Bajar el programa php (from: https://shorturl.at/goASW )
 
 Crear un contenedor para indicar donde se ubicaran las fuentes de php:
 
-```podman run -d --read-only --restart unless-stopped --pod image-gallery -v /home/juancvilla/projects/lamp1/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name mydevcontainer php-56-rhel7:1.0```
+```podman run -d --read-only --restart unless-stopped --pod image-gallery -v /home/juancvilla/projects/online-examination-systen-in-php-master/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name myc php-56-rhel7:1.0```
 
 Puedes detener el pod con el comando:
 
-```podman pod stop image-gallery```
+```podman pod stop oes```
 
 Puedes verificar que efectivamente no este corriendo, con el comando:
 
@@ -29,7 +29,32 @@ Puedes verificar que efectivamente no este corriendo, con el comando:
 
 Puedes volver a levantar el pod con el comando:
 
-```podman pod start image-gallery```
+```podman pod start oes```
+
+Crear un pod para la Base de datos:
+
+```podman run -d --restart unless-stopped --pod oes --name myd -v /home/juancvilla/projects/online-examination-systen-in-php-master/mysql:/var/lib/mysql -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -e MYSQL_DATABASE=project rhel8/mariadb-103```
+
+Revisar que esten corriendo:
+
+```podman ps -a --pod```
+
+Si no esta corriendo ejecutar:
+
+```podman pod start oes```
+
+Para crear la base de datos y sus tablas por primera vez:
+
+```podman exec -it myd bash```
+
+Conectarse a la base de datos con clave: admin
+
+```$ mysql -h 127.0.0.1 -u admin -p
+$ use database project;```
+
+Ejecutar todas las acciones que se encuentran en archivo project.sql
+
+head  pr
 
 
 

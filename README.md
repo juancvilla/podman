@@ -17,7 +17,7 @@ Bajar el programa php (from: https://shorturl.at/goASW )
 
 Crear un contenedor para indicar donde se ubicaran las fuentes de php:
 
-```podman run -d --read-only --restart unless-stopped --pod image-gallery -v /home/juancvilla/projects/online-examination-systen-in-php-master/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name myc php-56-rhel7:1.0```
+```podman run -d --read-only --restart unless-stopped --pod oes -v /home/juancvilla/projects/online-examination-systen-in-php-master/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name myc php-56-rhel7:1.0```
 
 Puedes detener el pod con el comando:
 

@@ -50,6 +50,7 @@ Para crear la base de datos y sus tablas por primera vez:
 Conectarse a la base de datos con clave: admin
 
 ```$ mysql -h 127.0.0.1 -u admin -p
+
 $ use database project;```
 
 Ejecutar todas las acciones que se encuentran en archivo project.sql
